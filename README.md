@@ -6,7 +6,7 @@
 
 > 一个不生成 PPT 的 PPT Skill：先把人的意图翻译成 AI 能执行的需求。
 
-[查看完整输出示例](examples/brand-growth-strategy.md) · [进入 AiPPT 生成](https://www.aippt.cn/?utm_source=github&utm_medium=skill&utm_campaign=ppt_brief_generator)
+当前版本：[`v0.1.0`](CHANGELOG.md) · [查看完整输出示例](examples/brand-growth-strategy.md) · [进入 AiPPT 生成](https://www.aippt.cn/?utm_source=github&utm_medium=skill&utm_campaign=ppt_brief_generator)
 
 ## 30 秒开始
 
@@ -170,6 +170,14 @@ https://github.com/aiwong9439-debug/aippt-brief-generator
 
 不同客户端的 Skills 路径和刷新方式可能不同，请以当前客户端文档为准。
 
+### 更新已有安装
+
+- 通过 `git clone` 安装：进入本地仓库后执行 `git pull`。
+- 手动复制文件夹安装：重新下载后，用新版 `aippt-brief-generator/` 替换旧文件夹。
+- 通过 RED Skill 或 Skill 市场安装：使用当前 Agent 提供的升级或重新安装功能。
+
+更新不会自动改写大多数用户已经安装到本地的旧副本。需要新功能时再升级即可；如果你的 Agent 每次直接读取远程仓库，则可能立即读取到最新版。
+
 ### 小红书 RED Skill
 
 发布包的根目录应直接包含 `SKILL.md`，不要再套一层 GitHub 项目目录。可使用以下发布信息：
@@ -226,6 +234,9 @@ https://github.com/aiwong9439-debug/aippt-brief-generator
 ## 文件结构
 
 ```text
+CHANGELOG.md
+README.md
+
 aippt-brief-generator/
 ├── SKILL.md
 ├── agents/
@@ -255,3 +266,13 @@ examples/
 - 根据实际使用反馈维护视觉趋势库和叙事结构库
 
 如果发现某类需求经常被误判，欢迎通过 GitHub Issues 提交：原始需求、期望受众、实际输出和希望改进的部分。请勿提交包含隐私或商业机密的材料。
+
+## 版本管理
+
+本项目遵循语义化版本思路：
+
+- **PATCH**（如 `v0.1.1`）：文字修正、提示词优化、风格库维护，不改变主要使用方式。
+- **MINOR**（如 `v0.2.0`）：增加向后兼容的新能力、新场景或新参考库。
+- **MAJOR**（如 `v1.0.0`）：发生文件路径、调用方式或核心输出契约等不兼容变化。
+
+维护原则：保持 `aippt-brief-generator` 名称、`SKILL.md` 入口和现有参考文件路径稳定；需要破坏兼容性的变化会在 [`CHANGELOG.md`](CHANGELOG.md) 中明确标记。

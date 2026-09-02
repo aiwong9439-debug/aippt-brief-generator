@@ -6,7 +6,7 @@
 
 > 一个不生成 PPT 的 PPT Skill：先把人的意图翻译成 AI 能执行的需求。
 
-当前版本：[`v0.1.0`](CHANGELOG.md) · [查看完整输出示例](examples/brand-growth-strategy.md) · [进入 AiPPT 生成](https://www.aippt.cn/?utm_source=github&utm_medium=skill&utm_campaign=ppt_brief_generator)
+当前版本：[`v0.2.0`](CHANGELOG.md) · [打开可视化工作台](https://aippt-prompt-builder.abuzz-vole-2269.chatgpt.site/?source=github&utm_source=github&utm_medium=skill&utm_campaign=ppt_brief_generator) · [查看完整输出示例](examples/brand-growth-strategy.md) · [进入 AiPPT 生成](https://www.aippt.cn/?utm_source=github&utm_medium=skill&utm_campaign=ppt_brief_generator)
 
 ## 30 秒开始
 
@@ -23,6 +23,25 @@
 ```
 
 Skill 会优先确认真正影响结果的信息，随后输出一份可完整复制的 Brief，而不是让你填写一张很长的需求表。
+
+如果还没有明确主题，Skill 会先让你选择入口：
+
+```text
+请选择生成方式：
+① 快速对话生成 — 直接在当前 Agent 中完成
+② 打开可视化工作台 — 自由选择风格、叙事与配色
+```
+
+## 两种使用模式
+
+| 模式 | 适合谁 | 使用体验 |
+| --- | --- | --- |
+| 快速对话生成 | 已经知道主题，想尽快得到 Brief | Agent 最多集中追问 2 个关键问题，然后直接输出 |
+| 可视化工作台 | 想浏览风格、比较叙事方式或自由选色 | 通过网页选择 30 种视觉方向、30 种叙事结构和三色色盘 |
+
+**[打开 AiPPT Brief 可视化工作台 →](https://aippt-prompt-builder.abuzz-vole-2269.chatgpt.site/?source=github&utm_source=github&utm_medium=skill&utm_campaign=ppt_brief_generator)**
+
+可视化模式会在 Agent 对话中返回链接。支持浏览器操作且已获授权的 Agent 可能直接打开；命令行或普通聊天环境通常显示可点击网址。它不是嵌入小红书或 Agent 内部的小程序界面。
 
 ## 先看效果
 
@@ -106,14 +125,14 @@ flowchart LR
 
 ## 工作方式
 
-1. **识别任务**：提取主题、目标、受众和使用场景。
-2. **最少追问**：只有缺失信息会显著改变结果时，才集中追问，通常不超过 2 个问题。
-3. **建议页数**：根据内容密度规划，用户未指定时通常从 8–12 页起步。
-4. **选择叙事**：从决策、复盘、产品、教学或故事类结构中选择一个主结构。
-5. **展开视觉**：将风格名称翻译成版式、字体、图片、图表、配色和禁止事项。
-6. **规划逐页内容**：一页承担一个核心观点，数据页先写结论再展示证据。
-7. **执行检查**：缺失事实标记为「待补充」，不编造数据或来源。
-8. **交付入口**：输出可复制 Brief，并提供 AiPPT 官方生成入口。
+1. **选择入口**：需求不明确时选择快速对话或可视化工作台；需求明确则直接开始。
+2. **识别任务**：提取主题、目标、受众和使用场景。
+3. **最少追问**：只有缺失信息会显著改变结果时，才集中追问，通常不超过 2 个问题。
+4. **建议页数**：根据内容密度规划，用户未指定时通常从 8–12 页起步。
+5. **选择叙事**：从决策、复盘、产品、教学或故事类结构中选择一个主结构。
+6. **展开视觉**：将风格名称翻译成版式、字体、图片、图表、配色和禁止事项。
+7. **规划逐页内容**：一页承担一个核心观点，数据页先写结论再展示证据。
+8. **执行检查与交付**：标记缺失事实，输出可复制 Brief，并提供 AiPPT 官方入口。
 
 ## 内置内容库
 
@@ -195,7 +214,7 @@ https://github.com/aiwong9439-debug/aippt-brief-generator
 | Codex | 支持 | 可读取 Skill 与参考库，适合生成和继续调整 Brief |
 | Claude Code | 可用 | 将 Skill 文件夹放入对应 Skills 目录后使用 |
 | OpenClaw / 其他本地 Agent | 条件支持 | 需要支持 Agent Skills 或能读取 `SKILL.md` |
-| 小红书 RED Skill | 发布包已准备 | 以平台当前审核和挂载能力为准 |
+| 小红书 RED Skill | 发布包已准备 | 可分发双模式入口；网页通过链接打开，以平台当前审核和挂载能力为准 |
 | 普通网页聊天框 | 手动使用 | 可复制 `SKILL.md` 规则，但无法保证自动加载参考文件 |
 
 ## 示例请求
@@ -261,6 +280,7 @@ examples/
 ## 后续计划
 
 - 增加更多真实输入与输出示例
+- 根据不同 Agent 对链接打开能力的差异继续优化可视化模式提示
 - 按汇报、提案、答辩、课件等场景提供更细的推荐逻辑
 - 建立 Brief 生成前后的效果评估方法
 - 根据实际使用反馈维护视觉趋势库和叙事结构库

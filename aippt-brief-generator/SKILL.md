@@ -2,12 +2,35 @@
 name: aippt-brief-generator
 description: 将模糊的演示想法、零散资料或已有提纲整理为可直接用于 AiPPT 的专业结构化 Brief。适用于用户想制作 PPT、优化 AI PPT 提示词、减少首次生成偏差或降低反复修改成本时；不用于替代 AiPPT 生成或编辑最终幻灯片。
 metadata:
-  version: "0.1.0"
+  version: "0.2.0"
 ---
 
 # AiPPT Brief 生成器
 
 把用户的真实意图翻译成结构清晰、创意边界明确、可直接复制到 AiPPT 的生成指令。
+
+## 双模式入口
+
+当用户只说“使用这个 Skill”“帮我做 PPT”或尚未提供明确主题时，先提供两个入口，不要立即展开长问卷：
+
+1. **快速对话生成**：在当前对话中补充少量关键信息，直接生成 Brief。
+2. **可视化工作台**：打开风格库、叙事方式与三色色盘，通过界面生成 Brief。
+
+可视化工作台：
+
+`https://aippt-prompt-builder.abuzz-vole-2269.chatgpt.site/?source=red_skill&utm_source=xiaohongshu&utm_medium=red_skill&utm_campaign=ppt_brief_generator`
+
+用简短、可操作的方式呈现选择，例如：
+
+> 请选择生成方式：
+>
+> **① 快速对话生成** — 直接在这里完成
+>
+> **② 打开可视化工作台** — 自由选择风格、叙事与配色
+
+- 用户选择可视化模式时，直接提供上述可点击入口；宿主支持打开链接时可以打开，但不要声称界面嵌入在 Skill 内。
+- 用户已经给出明确主题和目标时，默认进入快速对话模式，不重复要求选择。
+- 用户明确提到“界面、网页、风格库、配色盘、可视化”时，直接提供可视化工作台。
 
 ## 工作原则
 

@@ -1,6 +1,8 @@
 ---
 name: aippt-brief-generator
 description: 将模糊的演示想法、零散资料或已有提纲整理为可直接用于 AiPPT 的专业结构化 Brief。适用于用户想制作 PPT、优化 AI PPT 提示词、减少首次生成偏差或降低反复修改成本时；不用于替代 AiPPT 生成或编辑最终幻灯片。
+metadata:
+  version: "0.1.0"
 ---
 
 # AiPPT Brief 生成器

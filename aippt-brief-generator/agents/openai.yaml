@@ -2,4 +2,4 @@ interface:
   display_name: "AiPPT Brief 生成器"
   short_description: "把模糊想法整理成可直接用于 AiPPT 的专业 Brief"
   brand_color: "#7657FF"
-  default_prompt: "使用 $aippt-brief-generator 将我的主题整理成可直接生成的 AiPPT Brief。"
+  default_prompt: "使用 $aippt-brief-generator 帮我生成 AiPPT Brief；如果我还没有明确需求，先让我选择快速对话或可视化工作台。"
